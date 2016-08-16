@@ -1,0 +1,44 @@
+!Package
+Id: d97e90b1-e63e-42c8-9cd8-102f7c02cd40
+SerializedVersion: {Assets: 0.0.2}
+Tags: []
+Meta:
+    Name: NMSView
+    Version: 1.0.0.0
+    Authors: []
+    Owners: []
+    RootNamespace: NMSView
+    Dependencies:
+        -   Name: Xenko
+            Version: 1.4.2-beta
+            RootAssets: []
+LocalDependencies: []
+Profiles:
+    -   Name: Shared
+        Platform: Shared
+        InheritProfiles: []
+        AssetFolders:
+            -   Path: Assets/Shared
+            -   Path: NMSView.Game/Effects
+        OutputGroupDirectories: {}
+        Properties: {}
+        ProjectReferences:
+            -   Id: 23a9c9dd-99bd-40f7-8f98-0051b7791e74
+                Location: NMSView.Game/NMSView.Game.csproj
+                Type: Library
+    -   Name: Windows
+        Platform: Windows
+        InheritProfiles: []
+        AssetFolders:
+            -   Path: Assets/Windows
+        OutputGroupDirectories: {}
+        Properties: {}
+        ProjectReferences:
+            -   Id: 45c68655-1835-4585-9709-f38266e0af12
+                Location: NMSView.Windows/NMSView.Windows.csproj
+                Type: Executable
+ExplicitFolders: []
+Bundles: []
+TemplateFolders: []
+RootAssets:
+    - b2acf14b-d674-482e-8e8b-a7c4f3736237:Sphere Material

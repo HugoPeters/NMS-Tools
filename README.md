@@ -2,7 +2,7 @@
 Set of tools for No Man's Sky.
 
 ## NMS-Extract
-Extractor that automatically scans a directory (should be the PCBANKS folder) for .pak's and extracts them neatly in an output folder.
+Extractor that scans a directory (should be the PCBANKS folder) for .pak's and extracts them neatly in an output folder.
 
 ## NMS-View
 ![o shit whaddup](http://i.imgur.com/vMc0eLS.png)
