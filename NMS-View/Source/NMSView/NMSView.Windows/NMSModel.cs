@@ -337,7 +337,7 @@ namespace NMSView
             if (_data.Count < 1)
                 return null;
 
-            return new Vector3(_data[0][0], _data[0][2], _data[0][1]);
+            return new Vector3(_data[0][0], _data[0][1], _data[0][2]);
         }
 
         public Vector2? GetTexCoord()
@@ -345,7 +345,7 @@ namespace NMSView
             if (_data.Count < 2)
                 return null;
 
-            return new Vector2(_data[1][0], _data[1][2]);
+            return new Vector2(_data[1][0], _data[1][1]);
         }
 
         public Vector3? GetNormal()
@@ -353,7 +353,7 @@ namespace NMSView
             if (_data.Count < 3)
                 return null;
 
-            return new Vector3(_data[2][0], _data[2][2], _data[2][1]);
+            return new Vector3(_data[2][0], _data[2][1], _data[2][2]);
         }
 
         public static float[] ReadCompressedFloats(BinaryReader handle, int count)

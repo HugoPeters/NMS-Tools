@@ -9,7 +9,7 @@ namespace NMSView
     class NMSViewApp
     {
         public static string Credits = "Hugo_Peters, ladislavlang (half-float lib)";
-        public static string Version = "0.1";
+        public static string Version = "0.2";
 
         static void PrintCredits()
         {
