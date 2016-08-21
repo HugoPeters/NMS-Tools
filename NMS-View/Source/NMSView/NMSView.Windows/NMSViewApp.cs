@@ -40,6 +40,8 @@ namespace NMSView
 
                 NMSViewGame.ReqFname = args.Length > 0 ? args[0] : null;
 
+                inst.OnModelLoaded += new NMSViewGame.ModelLoadedEventHandler((model, entity, name) => { form.SetModelInst(name, model); });
+
                 var ctx = new GameContext(form.RenderPanel, false);
 
                 inst.Run(ctx);

@@ -115,7 +115,7 @@ namespace NMSView
             var meta = SecHeader.HeaderOffsetSections[14];
 
             handle.BaseStream.Position = meta.AbsOffset;
-            uint IdxCount = meta.Count * 2; // ????
+            uint IdxCount = meta.Count * (Indices16Bit ? (uint)2 : (uint)1); // ????
 
             Indices = new List<int>();
 

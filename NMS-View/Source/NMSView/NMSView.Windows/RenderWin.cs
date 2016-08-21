@@ -14,6 +14,7 @@ namespace NMSView
     public partial class RenderWin : Form
     {
         public NMSViewGame Inst;
+        public NMSModel ModelInst;
 
         public RenderWin(NMSViewGame Inst)
         {
@@ -54,6 +55,12 @@ namespace NMSView
             {
                 entity.Transform.Rotation = Quaternion.RotationX(-MathUtil.PiOverTwo) * Quaternion.RotationY(-MathUtil.PiOverTwo);
             }
+        }
+
+        public void SetModelInst(string Name, NMSModel Model)
+        {
+            this.ModelInst = Model;
+            this.Text = Name;
         }
     }
 }

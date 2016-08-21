@@ -20,6 +20,9 @@ namespace NMSView
 
         public FreeCamera CamController;
 
+        public delegate void ModelLoadedEventHandler(NMSModel Model, NMSEntity Entity, string Name);
+        public event ModelLoadedEventHandler OnModelLoaded;
+
         protected override Task LoadContent()
         {
             EntityAddQueue = new ConcurrentQueue<Entity>();
@@ -69,6 +72,11 @@ namespace NMSView
 
             Console.WriteLine("OK");
 
+            if (OnModelLoaded != null)
+            {
+                OnModelLoaded(model, entity, FileName);
+            }
+
             return true;
         }
 
@@ -80,7 +88,7 @@ namespace NMSView
                 EntityRemoveQueue.Enqueue(entity);
         }
 
-        public Entity CreateCustomMeshModel(GraphicsDevice graphicsDevice, VertexPositionNormalTexture[] Vertexes, int[] Indices, PrimitiveType PrimType, RasterizerStateDescription RasterizerDesc, Material Mat, Vector3 SpawnPos, Quaternion SpawnRot, bool SpawnNow = true)
+        public NMSEntity CreateCustomMeshModel(GraphicsDevice graphicsDevice, VertexPositionNormalTexture[] Vertexes, int[] Indices, PrimitiveType PrimType, RasterizerStateDescription RasterizerDesc, Material Mat, Vector3 SpawnPos, Quaternion SpawnRot, bool SpawnNow = true)
         {
             var meshMesh = new Mesh();
             var meshDraw = new MeshDraw();
